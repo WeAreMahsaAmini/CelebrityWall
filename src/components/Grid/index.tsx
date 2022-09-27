@@ -4,7 +4,7 @@ import {
   TransformWrapper,
   TransformComponent,
 } from '@pronestor/react-zoom-pan-pinch'
-import { data } from '../../data/celebrities'
+import { data } from '../../data/data'
 import { Card, Celebrity } from '../Card'
 
 export const Grid = () => {
