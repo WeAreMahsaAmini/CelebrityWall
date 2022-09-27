@@ -15,11 +15,12 @@ export const Grid = () => {
 
   return (
     <TransformWrapper
-      minScale={0.5}
-      maxScale={3}
-      initialScale={1}
+      minScale={0.1}
+      maxScale={2}
+      initialScale={0.5}
       initialPositionX={0}
       initialPositionY={0}
+      limitToBounds={false}
     >
       {({ zoomIn, zoomOut, resetTransform }) => (
         <>
@@ -40,7 +41,7 @@ export const Grid = () => {
             </button>
           </div>
           <TransformComponent>
-            <div className="flex flex-wrap m-5 items-start h-[100vh] w-[100vw] ">
+            <div className="flex flex-wrap m-5 items-start h-[100vh] w-[400vw] ">
               {renderBoxes()}
             </div>
           </TransformComponent>

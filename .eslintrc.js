@@ -25,5 +25,6 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
     'react/function-component-definition': 'off',
+    'no-nested-ternary': 'off',
   },
 }
