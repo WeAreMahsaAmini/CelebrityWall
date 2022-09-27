@@ -1,0 +1,71 @@
+name: '＋ New Celebrity'
+description: Create a new celebrity.
+title: '＋ [NEW CELEBRITY] - <name of the celebrity>'
+labels: ['new-celebrity']
+body:
+  - type: input
+    id: celebrity-name
+    attributes:
+      label: 'Celebrity name'
+      description: Please enter the full name of the celebrity
+      placeholder: ex. Ali Karimi
+    validations:
+      required: true
+  - type: input
+    id: image-url
+    attributes:
+      label: 'Celebrity Image URL'
+      description: Please enter the celebrity's image URL
+      placeholder: ex. https://pbs.twimg.com/profile_images/1526469339267866625/1B9GVkrM_400x400.jpg
+    validations:
+      required: true
+  - type: input
+    id: twitter-url
+    attributes:
+      label: 'Twitter URL'
+      description: If applicable, please enter the celebrity's Twitter account URL
+      placeholder: ex. https://twitter.com/alikarimi_ak8
+    validations:
+      required: false
+  - type: input
+    id: instagram-url
+    attributes:
+      label: 'Instagram URL'
+      description: If applicable, please enter the celebrity's Instagram account URL
+      placeholder: ex. https://instagram.com/aliiiiiiiikarimi8
+    validations:
+      required: false
+  - type: dropdown
+    id: category
+    attributes:
+      label: 'Category'
+      description: What is the category of the celebrity?
+      multiple: false
+      options:
+        - Actor
+        - Artist
+        - Athlete
+        - Politician
+        - Other ...
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: 'Status'
+      description: What is the status of the celebrity?
+      multiple: false
+      options:
+        - Good
+        - Bad
+        - Ugly
+    validations:
+      required: true
+  - type: input
+    id: status-url
+    attributes:
+      label: 'Status Reference URL'
+      description: If they are not ugly, please enter the celebrity's content URL that indicates their status
+      placeholder: ex. https://twitter.com/alikarimi_ak8/status/1574076531483312128?s=20&t=X57jDRgIBSmiU95GK8NvhA
+    validations:
+      required: false
