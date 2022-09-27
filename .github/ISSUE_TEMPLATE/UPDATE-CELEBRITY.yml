@@ -1,6 +1,6 @@
-name: '🔄 Update Celebrity'
+name: '⇌ Update Celebrity'
 description: Create a new celebrity.
-title: '🔄 [UPDATE CELEBRITY] - <name of the celebrity>'
+title: '⇄ [UPDATE CELEBRITY] - <name of the celebrity>'
 labels: ['update-celebrity']
 body:
   - type: input
@@ -30,7 +30,7 @@ body:
   - type: dropdown
     id: status
     attributes:
-      label: 'New Status'
+      label: 'New status'
       description: If applicable, what is the new status of the celebrity?
       multiple: false
       options:
@@ -42,7 +42,7 @@ body:
   - type: input
     id: status-url
     attributes:
-      label: 'New Status Reference URL'
+      label: 'New status reference URL'
       description: If they are not ugly, please enter the celebrity's content URL that indicates their status
       placeholder: ex. https://twitter.com/alikarimi_ak8/status/1574076531483312128?s=20&t=X57jDRgIBSmiU95GK8NvhA
     validations:

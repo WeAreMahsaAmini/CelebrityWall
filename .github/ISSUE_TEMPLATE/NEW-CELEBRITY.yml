@@ -14,7 +14,7 @@ body:
   - type: input
     id: image-url
     attributes:
-      label: 'Celebrity Image URL'
+      label: 'Celebrity image URL'
       description: Please enter the celebrity's image URL
       placeholder: ex. https://pbs.twimg.com/profile_images/1526469339267866625/1B9GVkrM_400x400.jpg
     validations:
@@ -64,7 +64,7 @@ body:
   - type: input
     id: status-url
     attributes:
-      label: 'Status Reference URL'
+      label: 'Status reference URL'
       description: If they are not ugly, please enter the celebrity's content URL that indicates their status
       placeholder: ex. https://twitter.com/alikarimi_ak8/status/1574076531483312128?s=20&t=X57jDRgIBSmiU95GK8NvhA
     validations:
