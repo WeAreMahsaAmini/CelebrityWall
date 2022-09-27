@@ -42,7 +42,7 @@ body:
       description: What is the category of the celebrity?
       multiple: false
       options:
-        - Actor
+        - Activist
         - Artist
         - Athlete
         - Politician
