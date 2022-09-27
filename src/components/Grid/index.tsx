@@ -21,7 +21,7 @@ export const Grid = () => {
       initialPositionX={0}
       initialPositionY={0}
     >
-      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+      {({ zoomIn, zoomOut, resetTransform }) => (
         <>
           <div className="flex space-x-2 items-center justify-center">
             <button
