@@ -15,9 +15,9 @@ export const Grid = () => {
 
   return (
     <TransformWrapper
-      minScale={0.1}
+      minScale={0.2}
       maxScale={2}
-      initialScale={0.5}
+      initialScale={0.2}
       initialPositionX={0}
       initialPositionY={0}
       limitToBounds={false}
@@ -40,8 +40,8 @@ export const Grid = () => {
               x
             </button>
           </div>
-          <TransformComponent>
-            <div className="flex flex-wrap m-5 items-start h-[100vh] w-[400vw] ">
+          <TransformComponent wrapperStyle={{ width: '500%' }}>
+            <div className="flex flex-wrap items-start h-full w-full ">
               {renderBoxes()}
             </div>
           </TransformComponent>
