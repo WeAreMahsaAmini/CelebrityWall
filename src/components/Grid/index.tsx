@@ -5,13 +5,16 @@ import { Card, Celebrity } from '../Card'
 
 export type GridProps = {
   pos: { x: number; y: number; scale: number }
+  searchText: string
 }
 
-export const Grid = ({ pos }: GridProps) => {
+export const Grid = ({ pos, searchText }: GridProps) => {
   const { celebrities } = data
 
   const renderBoxes = () =>
-    celebrities.map(celebrity => <Card celebrity={celebrity as Celebrity} />)
+    celebrities.map(celebrity => (
+      <Card celebrity={celebrity as Celebrity} searchText={searchText} />
+    ))
 
   return (
     <div

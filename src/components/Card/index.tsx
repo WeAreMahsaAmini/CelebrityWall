@@ -7,11 +7,21 @@ export type Celebrity = {
   status: 'GOOD' | 'BAD' | 'UGLY'
 }
 
-export const Card = ({ celebrity }: { celebrity: Celebrity }) => {
+export const Card = ({
+  celebrity,
+  searchText,
+}: {
+  celebrity: Celebrity
+  searchText: string
+}) => {
   const { id, name, imageUrl, status } = celebrity
   return (
     <div
-      className="shadow w-40 m-2 group overflow-hidden"
+      className={`shadow w-40 m-2 group overflow-hidden ${
+        name.toLowerCase().includes(searchText.toLowerCase())
+          ? ''
+          : 'opacity-50'
+      }`}
       key={id}
       // onClick={() => {}}
       onContextMenu={() => {}}

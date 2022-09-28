@@ -10,10 +10,12 @@ import { isMobile } from 'react-device-detect'
 
 import './App.css'
 import { Grid } from './components/Grid'
+import SearchInput from './components/SearchInput'
 
 function App() {
   const [pos, setPos] = useState({ oldX: 0, oldY: 0, x: 0, y: 0, scale: 0.5 })
   const [isPanning, setPanning] = useState(false)
+  const [searchText, setSearchText] = useState('')
 
   const scrollHandler = (event: any) => {
     const minScale = 0.2
@@ -68,12 +70,15 @@ function App() {
   })
 
   return (
-    <div
-      className={`App w-screen h-screen ${isMobile ? '' : 'overflow-hidden'}`}
-      onWheelCapture={scrollHandler}
-      onMouseDown={onMouseDown}
-    >
-      <Grid pos={pos} />
+    <div>
+      <div
+        className={`App w-screen h-screen ${isMobile ? '' : 'overflow-hidden'}`}
+        onWheelCapture={scrollHandler}
+        onMouseDown={onMouseDown}
+      >
+        <Grid pos={pos} searchText={searchText} />
+      </div>
+      <SearchInput value={searchText} handleChange={setSearchText} />
     </div>
   )
 }
