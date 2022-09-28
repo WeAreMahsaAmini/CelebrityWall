@@ -71,6 +71,9 @@ function App() {
       }
     }
     const touchmove = (event: any) => {
+      if (event.touches.length === 2) {
+        return
+      }
       event.preventDefault()
       if (isPanningTouch) {
         setPos({
