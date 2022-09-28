@@ -9,11 +9,21 @@ import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
 import './App.css'
+import { Celebrity } from './components/Card'
 import { Grid } from './components/Grid'
+import { Modal } from './components/Modal'
 
 function App() {
+  const [celebrity, setCelebrity] = useState<Celebrity | undefined>(undefined)
   const [pos, setPos] = useState({ oldX: 0, oldY: 0, x: 0, y: 0, scale: 0.5 })
   const [isPanning, setPanning] = useState(false)
+
+  const setCelebrityControlled = (c: Celebrity | undefined) => {
+    if (isPanning) {
+      return
+    }
+    setCelebrity(c)
+  }
 
   const scrollHandler = (event: any) => {
     const minScale = 0.2
@@ -73,7 +83,8 @@ function App() {
       onWheelCapture={scrollHandler}
       onMouseDown={onMouseDown}
     >
-      <Grid pos={pos} />
+      <Grid pos={pos} setCelebrity={setCelebrityControlled} />
+      <Modal celebrity={celebrity} setCelebrity={setCelebrityControlled} />
     </div>
   )
 }
