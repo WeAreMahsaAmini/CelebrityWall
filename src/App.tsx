@@ -12,6 +12,7 @@ import { Grid } from './components/Grid'
 function App() {
   const [pos, setPos] = useState({ oldX: 0, oldY: 0, x: 0, y: 0, scale: 0.5 })
   const [isPanning, setPanning] = useState(false)
+  const [isPanningTouch, setPanningTouch] = useState(false)
 
   const scrollHandler = (event: any) => {
     const minScale = 0.2
@@ -42,8 +43,7 @@ function App() {
   }
 
   const onTouchStart = (event: any) => {
-    event.preventDefault()
-    setPanning(true)
+    setPanningTouch(true)
     setPos({
       ...pos,
       oldX: event.touches[0].clientX,
@@ -59,6 +59,7 @@ function App() {
       setPanning(false)
     }
     const mousemove = (event: any) => {
+      event.preventDefault()
       if (isPanning) {
         setPos({
           ...pos,
@@ -70,7 +71,8 @@ function App() {
       }
     }
     const touchmove = (event: any) => {
-      if (isPanning) {
+      event.preventDefault()
+      if (isPanningTouch) {
         setPos({
           ...pos,
           x: pos.x + event.touches[0].clientX - pos.oldX,
@@ -82,8 +84,8 @@ function App() {
     }
     window.addEventListener('mouseup', mouseup)
     window.addEventListener('touchend', touchend)
-    window.addEventListener('mousemove', mousemove)
-    window.addEventListener('touchmove', touchmove)
+    window.addEventListener('mousemove', mousemove, { passive: false })
+    window.addEventListener('touchmove', touchmove, { passive: false })
     return () => {
       window.removeEventListener('mouseup', mouseup)
       window.removeEventListener('touchend', touchend)
