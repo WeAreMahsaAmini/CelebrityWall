@@ -6,6 +6,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React, { useEffect, useState } from 'react'
+import { isMobile } from 'react-device-detect'
+
 import './App.css'
 import { Grid } from './components/Grid'
 
@@ -67,7 +69,7 @@ function App() {
 
   return (
     <div
-      className="App"
+      className={`App w-screen h-screen ${isMobile ? '' : 'overflow-hidden'}`}
       onWheelCapture={scrollHandler}
       onMouseDown={onMouseDown}
     >

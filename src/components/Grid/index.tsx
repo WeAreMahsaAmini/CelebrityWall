@@ -21,7 +21,6 @@ export const Grid = ({ pos }: GridProps) => {
         transformOrigin: '0 0',
         transform: `translate(${pos.x}px, ${pos.y}px) scale(${pos.scale})`,
       }}
-      draggable
     >
       {renderBoxes()}
     </div>
