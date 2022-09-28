@@ -1,52 +1,29 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
-import {
-  TransformWrapper,
-  TransformComponent,
-} from '@pronestor/react-zoom-pan-pinch'
 import { data } from '../../data/data'
 import { Card, Celebrity } from '../Card'
 
-export const Grid = () => {
+export type GridProps = {
+  pos: { x: number; y: number; scale: number }
+}
+
+export const Grid = ({ pos }: GridProps) => {
   const { celebrities } = data
 
   const renderBoxes = () =>
     celebrities.map(celebrity => <Card celebrity={celebrity as Celebrity} />)
 
   return (
-    <TransformWrapper
-      minScale={0.2}
-      maxScale={2}
-      initialScale={0.2}
-      initialPositionX={0}
-      initialPositionY={0}
-      limitToBounds={false}
+    <div
+      className="flex flex-wrap"
+      style={{
+        width: `${30 * 160}px`,
+        transformOrigin: '0 0',
+        transform: `translate(${pos.x}px, ${pos.y}px) scale(${pos.scale})`,
+      }}
+      draggable
     >
-      {({ zoomIn, zoomOut, resetTransform }) => (
-        <>
-          <div className="flex space-x-2 items-center justify-center">
-            <button
-              type="button"
-              onClick={() => {
-                zoomIn()
-              }}
-            >
-              +
-            </button>
-            <button type="button" onClick={() => zoomOut()}>
-              -
-            </button>
-            <button type="button" onClick={() => resetTransform()}>
-              x
-            </button>
-          </div>
-          <TransformComponent wrapperStyle={{ width: '500%' }}>
-            <div className="flex flex-wrap items-start h-full w-full ">
-              {renderBoxes()}
-            </div>
-          </TransformComponent>
-        </>
-      )}
-    </TransformWrapper>
+      {renderBoxes()}
+    </div>
   )
 }

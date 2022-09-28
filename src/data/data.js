@@ -724,30 +724,6 @@ export const data = {
       statusReferenceUrl: 'https://t.co/BswCqgzpvU',
     },
     {
-      id: 'wizkhalifa',
-      name: 'Wiz Khalifa',
-      imageUrl:
-        'http://pbs.twimg.com/profile_images/1540790925231763456/Xa_6YXxa_400x400.jpg',
-      socialAccounts: [
-        {
-          type: 'TWITTER',
-          url: 'wizkhalifa',
-        },
-        {
-          type: 'INSTAGRAM',
-          url: '',
-        },
-      ],
-      category: 'ART',
-      status:
-        Math.random() < BAD_RATE
-          ? 'BAD'
-          : Math.random() < GOOD_RATE
-          ? 'GOOD'
-          : 'UGLY',
-      statusReferenceUrl: 'https://t.co/vrT56CZuhG',
-    },
-    {
       id: 'pitbull',
       name: 'Pitbull',
       imageUrl:
@@ -1802,30 +1778,6 @@ export const data = {
           ? 'GOOD'
           : 'UGLY',
       statusReferenceUrl: 'https://t.co/gf7hhkgGly',
-    },
-    {
-      id: 'maroon5',
-      name: 'Maroon 5',
-      imageUrl:
-        'http://pbs.twimg.com/profile_images/1387773160267845638/UGS7F_3B_400x400.jpg',
-      socialAccounts: [
-        {
-          type: 'TWITTER',
-          url: 'maroon5',
-        },
-        {
-          type: 'INSTAGRAM',
-          url: '',
-        },
-      ],
-      category: 'ART',
-      status:
-        Math.random() < BAD_RATE
-          ? 'BAD'
-          : Math.random() < GOOD_RATE
-          ? 'GOOD'
-          : 'UGLY',
-      statusReferenceUrl: 'https://t.co/m1XmhtCgun',
     },
     {
       id: 'radityadika',

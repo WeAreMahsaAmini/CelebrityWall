@@ -1580,11 +1580,6 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pronestor/react-zoom-pan-pinch@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@pronestor/react-zoom-pan-pinch/-/react-zoom-pan-pinch-2.3.0.tgz#84d82cf0ee7006521490a65162a8e52ce8c26295"
-  integrity sha512-vXC7qhgVQmUrhC/EcZ+uKCVJS0k1lZ4vOExQCi2MoJ2TtoUAgtCMECy6M9bZX+98fTOmPgiSkiNhsWBN8NX8DQ==
-
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"
