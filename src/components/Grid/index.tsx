@@ -17,7 +17,7 @@ export const Grid = ({ pos }: GridProps) => {
     <div
       className="flex flex-wrap"
       style={{
-        width: `${30 * 160}px`,
+        width: `${25 * 160}px`,
         transformOrigin: '0 0',
         transform: `translate(${pos.x}px, ${pos.y}px) scale(${pos.scale})`,
       }}

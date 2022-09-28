@@ -12,7 +12,6 @@ import { Grid } from './components/Grid'
 function App() {
   const [pos, setPos] = useState({ oldX: 0, oldY: 0, x: 0, y: 0, scale: 0.5 })
   const [isPanning, setPanning] = useState(false)
-  const [isPanningTouch, setPanningTouch] = useState(false)
 
   const scrollHandler = (event: any) => {
     const minScale = 0.2
@@ -42,20 +41,8 @@ function App() {
     })
   }
 
-  const onTouchStart = (event: any) => {
-    setPanningTouch(true)
-    setPos({
-      ...pos,
-      oldX: event.touches[0].clientX,
-      oldY: event.touches[0].clientY,
-    })
-  }
-
   useEffect(() => {
     const mouseup = () => {
-      setPanning(false)
-    }
-    const touchend = () => {
       setPanning(false)
     }
     const mousemove = (event: any) => {
@@ -70,30 +57,11 @@ function App() {
         })
       }
     }
-    const touchmove = (event: any) => {
-      if (event.touches.length === 2) {
-        return
-      }
-      event.preventDefault()
-      if (isPanningTouch) {
-        setPos({
-          ...pos,
-          x: pos.x + event.touches[0].clientX - pos.oldX,
-          y: pos.y + event.touches[0].clientY - pos.oldY,
-          oldX: event.touches[0].clientX,
-          oldY: event.touches[0].clientY,
-        })
-      }
-    }
     window.addEventListener('mouseup', mouseup)
-    window.addEventListener('touchend', touchend)
-    window.addEventListener('mousemove', mousemove, { passive: false })
-    window.addEventListener('touchmove', touchmove, { passive: false })
+    window.addEventListener('mousemove', mousemove)
     return () => {
       window.removeEventListener('mouseup', mouseup)
-      window.removeEventListener('touchend', touchend)
       window.removeEventListener('mousemove', mousemove)
-      window.removeEventListener('touchmove', touchmove)
     }
   })
 
@@ -102,7 +70,6 @@ function App() {
       className="App"
       onWheelCapture={scrollHandler}
       onMouseDown={onMouseDown}
-      onTouchStart={onTouchStart}
     >
       <Grid pos={pos} />
     </div>
