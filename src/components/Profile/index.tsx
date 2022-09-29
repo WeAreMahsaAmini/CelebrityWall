@@ -7,7 +7,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/require-default-props */
-import React, { Fragment } from 'react'
+import React from 'react'
 import { TwitterTweetEmbed, TwitterShareButton } from 'react-twitter-embed'
 import { useHistory } from 'react-router-dom'
 import { Celebrity } from '../Card'
