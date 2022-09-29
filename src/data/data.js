@@ -2332,30 +2332,6 @@ export const data = {
       statusReferenceUrl: 'https://t.co/gCfGcJhU6c',
     },
     {
-      id: 'sabrinasatoreal',
-      name: 'Elegant Whore',
-      imageUrl:
-        'http://pbs.twimg.com/profile_images/378800000640521455/cef78f77c67d160b4fc6e2759f3ef793_400x400.jpeg',
-      socialAccounts: [
-        {
-          type: 'TWITTER',
-          url: 'sabrinasatoreal',
-        },
-        {
-          type: 'INSTAGRAM',
-          url: '',
-        },
-      ],
-      category: 'ART',
-      status:
-        Math.random() < BAD_RATE
-          ? 'BAD'
-          : Math.random() < GOOD_RATE
-          ? 'GOOD'
-          : 'UGLY',
-      statusReferenceUrl: null,
-    },
-    {
       id: 'tomhanks',
       name: 'Tom Hanks',
       imageUrl:
@@ -9338,6 +9314,30 @@ export const data = {
           ? 'GOOD'
           : 'UGLY',
       statusReferenceUrl: 'https://t.co/jlBCpx9ZTM',
+    },
+    {
+      id: 'BillieEilish',
+      name: 'Billie Eilish',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1387065127208247299/bni08CVZ_400x400.jpg',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'billieeilish',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'billieeilish',
+        },
+      ],
+      category: 'ART',
+      status:
+        Math.random() < BAD_RATE
+          ? 'BAD'
+          : Math.random() < GOOD_RATE
+          ? 'GOOD'
+          : 'UGLY',
+      statusReferenceUrl: null,
     },
   ],
 }
