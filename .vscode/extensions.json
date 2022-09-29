@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "henrynguyen5-vsc.vsc-nvm",
-    "esbenp.prettier-vscode",
-    "rvest.vs-code-prettier-eslint",
-    "dbaeumer.vscode-eslint",
-    "streetsidesoftware.code-spell-checker"
-  ]
-}
