@@ -9315,5 +9315,29 @@ export const data = {
           : 'UGLY',
       statusReferenceUrl: 'https://t.co/jlBCpx9ZTM',
     },
+    {
+      id: 'BillieEilish',
+      name: 'Billie Eilish',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1387065127208247299/bni08CVZ_400x400.jpg',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'billieeilish',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'billieeilish',
+        },
+      ],
+      category: 'ART',
+      status:
+        Math.random() < BAD_RATE
+          ? 'BAD'
+          : Math.random() < GOOD_RATE
+          ? 'GOOD'
+          : 'UGLY',
+      statusReferenceUrl: null,
+    },
   ],
 }
