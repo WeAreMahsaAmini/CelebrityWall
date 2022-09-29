@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -19,35 +20,47 @@ export type Celebrity = {
 
 export type CardProps = {
   celebrity: Celebrity
-  clickable: boolean
+  level: number
+  visible: boolean
 }
 
-export const Card = ({ celebrity, clickable }: CardProps) => {
+export const Card = ({ celebrity, level, visible }: CardProps) => {
   const { id, name, imageUrl, status } = celebrity
 
   const history = useHistory()
 
+  const levelMapping = {
+    0: { w: 20, s: 2 },
+    1: { w: 30, s: 3 },
+    2: { w: 40, s: 4 },
+    3: { w: 60, s: 6 },
+    4: { w: 80, s: 8 },
+    5: { w: 100, s: 10 },
+    6: { w: 120, s: 12 },
+    7: { w: 140, s: 14 },
+    8: { w: 180, s: 18 },
+  }
+
   return (
     <div
-      className="shadow w-40 m-2 group overflow-hidden"
+      className="shadow group overflow-hidden m-[1px] transition-all duration-200"
       key={id}
       onClick={() => {
-        if (clickable) {
-          history.push(`/profile/${id}`)
-        }
+        history.push(`/profile/${id}`)
       }}
+      style={{ width: `${levelMapping[level].w}px` }}
       draggable={false}
     >
       <div className="relative">
         {status === 'GOOD' && (
           <div
-            className="absolute inset-0 opacity-40 bg-green-500 group-hover:hidden z-50 transition-all duration-500"
+            className="absolute inset-0 opacity-40 bg-green-500 group-hover:hidden z-30 transition-all duration-500"
             draggable={false}
           />
         )}
         {status === 'UGLY' && (
           <div
-            className="absolute inset-0 opacity-40 bg-red-500 group-hover:hidden z-50 transition-all duration-500"
+            className="absolute inset-0 opacity-40 bg-red-500 group-hover:hidden z-30 transition-all duration-500"
             draggable={false}
           />
         )}
@@ -59,7 +72,14 @@ export const Card = ({ celebrity, clickable }: CardProps) => {
           draggable={false}
         />
       </div>
-      <div className="p-2 text-xs">{name}</div>
+      {visible && (
+        <div
+          className="p-[1px] text-center"
+          style={{ fontSize: `${levelMapping[level].s}px` }}
+        >
+          {name}
+        </div>
+      )}
     </div>
   )
 }

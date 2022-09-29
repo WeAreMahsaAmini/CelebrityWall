@@ -8,7 +8,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/require-default-props */
 import React from 'react'
-import { TwitterTweetEmbed, TwitterShareButton } from 'react-twitter-embed'
+import { TwitterTimelineEmbed, TwitterShareButton } from 'react-twitter-embed'
 import { useHistory } from 'react-router-dom'
 import { Celebrity } from '../Card'
 
@@ -42,10 +42,20 @@ export const Profile = ({ celebrity }: ProfileProps) => {
           {celebrity.name}
         </h1>
         {celebrity.status !== 'BAD' && (
-          <div className="p-10">
-            <TwitterTweetEmbed
+          <div className="p-5">
+            {/* <TwitterTweetEmbed
               tweetId="1574815161168412675"
               options={{ cards: 'hidden', theme: 'dark', conversation: 'none' }}
+            /> */}
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName={twitterAccount?.url || ''}
+              options={{ height: 600 }}
+              noHeader
+              noFooter
+              noBorders
+              transparent
+              tweetLimit={1}
             />
           </div>
         )}
