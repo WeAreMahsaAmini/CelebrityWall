@@ -5,15 +5,15 @@ import { Card, Celebrity } from '../Card'
 
 export type GridProps = {
   pos: { x: number; y: number; scale: number }
-  setCelebrity: (celebrity: Celebrity) => void
+  clickable: boolean
 }
 
-export const Grid = ({ pos, setCelebrity }: GridProps) => {
+export const Grid = ({ pos, clickable }: GridProps) => {
   const { celebrities } = data
 
   const renderBoxes = () =>
     celebrities.map(celebrity => (
-      <Card celebrity={celebrity as Celebrity} setCelebrity={setCelebrity} />
+      <Card celebrity={celebrity as Celebrity} clickable={clickable} />
     ))
 
   return (
