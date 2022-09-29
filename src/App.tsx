@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './App.css'
 
-import { Home } from './pages/Home'
-import { Profile } from './pages/Profile'
+import { HomePage } from './pages/HomePage'
+import { ProfilePage } from './pages/ProfilePage'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/profile/:id">
-          <Profile />
+          <ProfilePage />
         </Route>
         <Route path="/">
-          <Home />
+          <HomePage />
         </Route>
       </Switch>
     </Router>

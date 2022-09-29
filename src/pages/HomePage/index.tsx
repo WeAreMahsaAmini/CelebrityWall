@@ -13,7 +13,7 @@ import { isMobile } from 'react-device-detect'
 
 import { Grid } from '../../components/Grid'
 
-export const Home = () => {
+export const HomePage = () => {
   const [pos, setPos] = useState({ oldX: 0, oldY: 0, x: 0, y: 0, scale: 0.5 })
   const [isPanning, setPanning] = useState(false)
   const [clickable, setClickable] = useState(true)
