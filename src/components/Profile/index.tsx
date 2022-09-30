@@ -24,9 +24,9 @@ export const Profile = ({ celebrity }: ProfileProps) => {
   )
 
   return (
-    <div className="p-10 h-full">
+    <div className="sm:p-10 min-h-screen">
       <div className="flex flex-col rounded-md bg-neutral-100">
-      <button
+        <button
           type="button"
           className="text-neutral-600 w-6 p-1 m-3"
           onClick={() => history.goBack()}
