@@ -10,7 +10,7 @@ const SearchInput = ({ value, handleChange }: SearchInputProps) => {
     handleChange(event?.target?.value)
   }
   return (
-    <div className="fixed z-40 left-4 top-4 bg-slate-800 rounded-md p-2 border-2 text-slate-100 border-gray-500 shadow ">
+    <div className="fixed z-50 left-4 bottom-4 bg-slate-800 rounded-md p-2 border-2 text-slate-100 border-gray-500 shadow ">
       <svg
         className="float-left"
         xmlns="http://www.w3.org/2000/svg"
