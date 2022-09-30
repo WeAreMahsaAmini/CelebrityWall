@@ -29,7 +29,7 @@ export const Profile = ({ celebrity }: ProfileProps) => {
         <button
           type="button"
           className="text-neutral-600 w-1/6 bg-neutral-200 rounded-md m-2"
-          onClick={() => history.push('/')}
+          onClick={() => history.goBack()}
         >
           back
         </button>
