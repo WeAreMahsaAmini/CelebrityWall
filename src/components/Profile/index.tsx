@@ -45,7 +45,7 @@ export const Profile = ({ celebrity }: ProfileProps) => {
         <h1 className="text-2xl text-center mt-5 text-neutral-800">
           {celebrity.name}
         </h1>
-        {celebrity.status !== 'BAD' && (
+        {celebrity.status !== 'UGLY' && (
           <div className="p-5">
             {/* <TwitterTweetEmbed
               tweetId="1574815161168412675"
@@ -63,7 +63,7 @@ export const Profile = ({ celebrity }: ProfileProps) => {
             />
           </div>
         )}
-        {celebrity.status === 'BAD' && twitterAccount?.url && (
+        {celebrity.status === 'UGLY' && twitterAccount?.url && (
           <div className="p-10 place-content-center">
             <div className="">
               {`This celebrity has not supported the movement yet. Tweet and
