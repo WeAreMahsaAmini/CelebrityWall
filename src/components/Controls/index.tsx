@@ -16,7 +16,7 @@ export const Controls = ({
   <div className="fixed right-4 bottom-4 z-50 flex flex-col space-y-2">
     <div className="rounded-md w-10 h-10 flex flex-col">
       <button
-        className="rounded-md w-10 h-10 flex-1 text-2xl bg-slate-800 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
+        className="rounded-md w-10 h-10 flex-1 text-2xl bg-slate-800 hover:bg-slate-700 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
         type="button"
         onClick={() => setVisible(!visible)}
       >
@@ -51,7 +51,7 @@ export const Controls = ({
     </div>
     <div className="rounded-md w-10 h-20 flex flex-col overflow-hidden">
       <button
-        className="flex-1 text-2xl bg-slate-800 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
+        className="flex-1 text-2xl bg-slate-800 hover:bg-slate-700 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
         type="button"
         onClick={() => setLevel(level + 1)}
         disabled={level === 8}
@@ -70,7 +70,7 @@ export const Controls = ({
         </svg>
       </button>
       <button
-        className="flex-1 text-2xl bg-slate-800 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
+        className="flex-1 text-2xl bg-slate-800 hover:bg-slate-700 disabled:bg-slate-500 text-slate-100 disabled:text-slate-300 justify-center items-center flex"
         type="button"
         onClick={() => setLevel(level - 1)}
         disabled={level === 0}
