@@ -13,8 +13,11 @@ export const Grid = () => {
 
   const renderBoxes = () =>
     celebrities.map(celebrity => {
-      if (!celebrity.name.toLowerCase().includes(searchText.toLowerCase()))
-        return null
+      const nameIncludesSearch = celebrity.name
+        .toLowerCase()
+        .includes(searchText.toLowerCase())
+
+      if (!nameIncludesSearch) return null
 
       return (
         <Card
