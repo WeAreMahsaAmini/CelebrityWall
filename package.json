@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.4.12",
+    "clsx": "^1.2.1",
     "postcss": "^8.4.16",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
