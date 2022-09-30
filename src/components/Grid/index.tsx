@@ -19,7 +19,7 @@ export const Grid = () => {
     ))
 
   return (
-    <div className="flex flex-wrap justify-center h-screen">
+    <div className="flex flex-wrap justify-center content-start h-screen">
       {renderBoxes()}
       <Controls
         level={level}

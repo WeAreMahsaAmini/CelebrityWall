@@ -29,16 +29,16 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
 
   const history = useHistory()
 
-  const levelMapping = {
-    0: { w: 20, s: 2 },
-    1: { w: 30, s: 3 },
-    2: { w: 40, s: 4 },
-    3: { w: 60, s: 6 },
-    4: { w: 80, s: 8 },
-    5: { w: 100, s: 10 },
-    6: { w: 120, s: 12 },
-    7: { w: 140, s: 14 },
-    8: { w: 180, s: 18 },
+  const levelMapping: Record<string, { size: number; s: number }> = {
+    0: { size: 20, s: 2 },
+    1: { size: 30, s: 3 },
+    2: { size: 40, s: 4 },
+    3: { size: 60, s: 6 },
+    4: { size: 80, s: 8 },
+    5: { size: 100, s: 10 },
+    6: { size: 120, s: 12 },
+    7: { size: 140, s: 14 },
+    8: { size: 180, s: 18 },
   }
 
   return (
@@ -48,7 +48,9 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
       onClick={() => {
         history.push(`/profile/${id}`)
       }}
-      style={{ width: `${levelMapping[level].w}px` }}
+      style={{
+        width: `${levelMapping[level].size}px`,
+      }}
       draggable={false}
     >
       <div className="relative">
