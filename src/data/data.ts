@@ -1,7 +1,9 @@
+import { Celebrity } from '../types'
+
 const BAD_RATE = 0.8
 const GOOD_RATE = 0.8
 
-export const data = {
+export const data: { celebrities: Celebrity[] } = {
   celebrities: [
     {
       id: 'katyperry',
