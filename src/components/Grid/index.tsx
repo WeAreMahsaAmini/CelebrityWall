@@ -1,23 +1,26 @@
 import React from 'react'
 
 import { data } from '../../data/data'
+import { Celebrity } from '../../types'
 import { Card } from '../Card'
 import { Controls } from '../Controls'
-import SearchInput from '../SearchInput'
+import { SearchInput } from '../SearchInput'
 
 export const Grid = () => {
   const [level, setLevel] = React.useState<number>(6)
   const [visible, setVisible] = React.useState<boolean>(true)
-  const [searchText, setSearchText] = React.useState('')
+  const [query, setQuery] = React.useState('')
+  const [status, setStatus] = React.useState<Celebrity['status'] | null>(null)
   const { celebrities } = data
 
   const renderBoxes = () =>
     celebrities.map(celebrity => {
       const nameIncludesSearch = celebrity.name
         .toLowerCase()
-        .includes(searchText.toLowerCase())
+        .includes(query.toLowerCase())
 
       if (!nameIncludesSearch) return null
+      if (status && celebrity.status !== status) return null
 
       return <Card celebrity={celebrity} level={level} visible={visible} />
     })
@@ -31,7 +34,11 @@ export const Grid = () => {
         visible={visible}
         setVisible={setVisible}
       />
-      <SearchInput value={searchText} handleChange={setSearchText} />
+      <SearchInput
+        query={query}
+        setQuery={setQuery}
+        filter={{ status, setStatus }}
+      />
     </div>
   )
 }
