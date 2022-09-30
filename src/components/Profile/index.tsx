@@ -1,12 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/require-default-props */
 import React from 'react'
 import { TwitterTimelineEmbed, TwitterShareButton } from 'react-twitter-embed'
 import { useHistory } from 'react-router-dom'

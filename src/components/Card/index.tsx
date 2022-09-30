@@ -1,9 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Celebrity } from '../../types'
@@ -16,7 +10,7 @@ export type CardProps = {
 }
 
 export const Card = ({ celebrity, level, visible }: CardProps) => {
-  const { id, name, imageUrl, status } = celebrity
+  const { id, name, imageUrl } = celebrity
 
   const history = useHistory()
 
@@ -33,16 +27,15 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
   }
 
   return (
-    <div
+    <button
+      type="button"
       className="shadow group overflow-hidden m-[1px] transition-all duration-200"
-      key={id}
       onClick={() => {
         history.push(`/profile/${id}`)
       }}
       style={{
         width: `${levelMapping[level].size}px`,
       }}
-      draggable={false}
     >
       <div className="relative">
         <div
@@ -50,14 +43,12 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
             'absolute inset-0 opacity-40 group-hover:hidden z-30 transition-all duration-500',
             getCssColorByCelebrity({ celebrity, background: true }),
           )}
-          draggable={false}
         />
 
         <img
           src={imageUrl}
           alt={name}
           className="w-full grayscale group-hover:grayscale-0 transition-all duration-500"
-          draggable={false}
         />
       </div>
       {visible && (
@@ -68,6 +59,6 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
           {name}
         </div>
       )}
-    </div>
+    </button>
   )
 }
