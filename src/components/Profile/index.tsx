@@ -26,12 +26,12 @@ export const Profile = ({ celebrity }: ProfileProps) => {
   return (
     <div className="p-10 h-full">
       <div className="flex flex-col rounded-md bg-neutral-100">
-        <button
+      <button
           type="button"
-          className="text-neutral-600 w-1/6 bg-neutral-200 rounded-md m-2"
+          className="text-neutral-600 w-6 p-1 m-3"
           onClick={() => history.goBack()}
         >
-          back
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
         </button>
         <img
           src={celebrity.imageUrl}
