@@ -1,7 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Celebrity } from '../../components/Card'
 import { Profile } from '../../components/Profile'
 import { data } from '../../data/data'
 
@@ -13,7 +12,7 @@ export const ProfilePage = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 h-screen">
       <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-start-2 lg:col-span-1">
-        <Profile celebrity={celebrity as Celebrity} />
+        <Profile celebrity={celebrity} />
       </div>
     </div>
   )

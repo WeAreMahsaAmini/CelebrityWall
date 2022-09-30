@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { data } from '../../data/data'
-import { Card, Celebrity } from '../Card'
+import { Card } from '../Card'
 import { Controls } from '../Controls'
 import SearchInput from '../SearchInput'
 
@@ -19,13 +19,7 @@ export const Grid = () => {
 
       if (!nameIncludesSearch) return null
 
-      return (
-        <Card
-          celebrity={celebrity as Celebrity}
-          level={level}
-          visible={visible}
-        />
-      )
+      return <Card celebrity={celebrity} level={level} visible={visible} />
     })
 
   return (

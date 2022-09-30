@@ -6,17 +6,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-
-export type Celebrity = {
-  id: string
-  name: string
-  imageUrl: string
-  status: 'GOOD' | 'BAD' | 'UGLY'
-  socialAccounts: {
-    type: string
-    url: string
-  }[]
-}
+import { Celebrity } from '../../types'
+import { clsx, getCssColorByCelebrity } from '../../utils'
 
 export type CardProps = {
   celebrity: Celebrity
@@ -54,18 +45,13 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
       draggable={false}
     >
       <div className="relative">
-        {status === 'GOOD' && (
-          <div
-            className="absolute inset-0 opacity-40 bg-green-500 group-hover:hidden z-30 transition-all duration-500"
-            draggable={false}
-          />
-        )}
-        {status === 'UGLY' && (
-          <div
-            className="absolute inset-0 opacity-40 bg-red-500 group-hover:hidden z-30 transition-all duration-500"
-            draggable={false}
-          />
-        )}
+        <div
+          className={clsx(
+            'absolute inset-0 opacity-40 group-hover:hidden z-30 transition-all duration-500',
+            getCssColorByCelebrity({ celebrity, background: true }),
+          )}
+          draggable={false}
+        />
 
         <img
           src={imageUrl}

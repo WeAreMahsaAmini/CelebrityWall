@@ -10,7 +10,7 @@
 import React from 'react'
 import { TwitterTimelineEmbed, TwitterShareButton } from 'react-twitter-embed'
 import { useHistory } from 'react-router-dom'
-import { Celebrity } from '../Card'
+import { Celebrity } from '../../types'
 
 export type ProfileProps = {
   celebrity: Celebrity
@@ -31,7 +31,20 @@ export const Profile = ({ celebrity }: ProfileProps) => {
           className="text-neutral-600 w-6 p-1 m-3"
           onClick={() => history.goBack()}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
         </button>
         <img
           src={celebrity.imageUrl}
