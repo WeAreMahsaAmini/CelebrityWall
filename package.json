@@ -2,6 +2,7 @@
   "name": "celebrity-wall",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wall.wearemahsaamini.com",
   "dependencies": {
     "autoprefixer": "^10.4.12",
     "clsx": "^1.2.1",
