@@ -22,7 +22,14 @@ export const Grid = () => {
       if (!nameIncludesSearch) return null
       if (status && celebrity.status !== status) return null
 
-      return <Card celebrity={celebrity} level={level} visible={visible} />
+      return (
+        <Card
+          key={celebrity.id}
+          celebrity={celebrity}
+          level={level}
+          visible={visible}
+        />
+      )
     })
 
   return (
