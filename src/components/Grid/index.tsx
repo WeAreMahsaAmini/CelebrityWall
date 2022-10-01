@@ -2,15 +2,23 @@ import React from 'react'
 
 import { data } from '../../data/data'
 import { Celebrity } from '../../types'
+import { clsx, getCssColorByStatus } from '../../utils'
 import { Card } from '../Card'
 import { Controls } from '../Controls'
 import { SearchInput } from '../SearchInput'
 
-export const Grid = () => {
-  const [level, setLevel] = React.useState<number>(6)
-  const [visible, setVisible] = React.useState<boolean>(true)
-  const [query, setQuery] = React.useState('')
-  const [status, setStatus] = React.useState<Celebrity['status'] | null>(null)
+export type GridProps = {
+  query: string
+  setQuery: (value: string) => void
+  visible: boolean
+  setVisible: (value: boolean) => void
+  level: number
+  setLevel: (value: number) => void
+  status: Celebrity['status'] | null
+  setStatus: (value: Celebrity['status'] | null) => void
+}
+
+export const Grid = ({ query, setQuery, visible, setVisible, level, setLevel, status, setStatus }: GridProps) => {
   const { celebrities } = data
 
   const renderBoxes = () =>
@@ -26,18 +34,15 @@ export const Grid = () => {
     })
 
   return (
-    <div className="flex flex-wrap justify-center content-start h-screen">
-      {renderBoxes()}
+    <div className="max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-7 gap-x-5 px-10 lg:px-0">
+        {renderBoxes()}
+      </div>
       <Controls
         level={level}
         setLevel={setLevel}
         visible={visible}
         setVisible={setVisible}
-      />
-      <SearchInput
-        query={query}
-        setQuery={setQuery}
-        filter={{ status, setStatus }}
       />
     </div>
   )

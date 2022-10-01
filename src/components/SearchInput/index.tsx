@@ -1,24 +1,27 @@
 import React from 'react'
+import { clsx } from '../../utils'
 import { StatusFilterProps, StatusFilter } from './StatusFilter'
 
 export type SearchInputProps = {
   query: string
   setQuery: (value: string) => void
-  filter: StatusFilterProps
+  filter: StatusFilterProps,
+  theme: string
 }
 
 export const SearchInput = ({
   query,
   setQuery,
   filter: { status, setStatus },
+  theme = 'light',
 }: SearchInputProps) => {
   const onChange = (event: { target: { value: string } }) => {
     setQuery(event?.target?.value)
   }
   return (
-    <div className="fixed z-50 left-4 bottom-4 flex flex-col gap-2">
-      <StatusFilter status={status} setStatus={setStatus} />
-      <div className="bg-slate-800 rounded-md p-2 text-slate-100 shadow">
+    <div className="flex flex-col gap-2">
+      {/* <StatusFilter status={status} setStatus={setStatus} /> */}
+      <div className={clsx("rounded-md p-2 w-full shadow flex", (theme === 'light' ? 'bg-white text-gray-700' : 'bg-zinc-800 text-zinc-300'))}>
         <svg
           className="float-left"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +34,7 @@ export const SearchInput = ({
         </svg>
         <input
           type="text"
-          className="bg-transparent focus:outline-none ml-2"
+          className={clsx("bg-transparent focus:outline-none ml-2 w-full", (theme === 'light' ? 'text-black' : 'text-white'))}
           placeholder="Search celebrity"
           onChange={onChange}
           value={query}

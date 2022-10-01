@@ -1,48 +1,21 @@
 import React from 'react'
 
 import { Grid } from '../../components/Grid'
-import { clsx, getCssColorByStatus } from '../../utils'
+import { Header } from '../../components/Header'
+import { Hero } from '../../components/Hero'
+import { Celebrity } from '../../types'
 
-export const HomePage = () => (
-  <div className="flex flex-col">
-    <div className="flex flex-col gap-2 items-center p-5 text-center">
-      <h1 className="text-4xl font-bold">Celebrity Wall</h1>
-      <div className="flex flex-col gap-1 items-center">
-        <p className="text-lg">
-          The goal of this project is to provide a big picture of celebrities
-          and their stance regarding what is happening in Iran.
-        </p>
-        <p className="text-lg">
-          <p
-            className={clsx(
-              'inline font-bold text-white px-1',
-              getCssColorByStatus({ status: 'GOOD', background: true }),
-            )}
-          >
-            Green celebrities
-          </p>{' '}
-          supported the cause,{' '}
-          <p
-            className={clsx(
-              'inline font-bold text-white px-1',
-              getCssColorByStatus({ status: 'UGLY', background: true }),
-            )}
-          >
-            gray celebrities
-          </p>{' '}
-          didn&apos;t react to the cause, and{' '}
-          <p
-            className={clsx(
-              'inline font-bold text-white px-1',
-              getCssColorByStatus({ status: 'BAD', background: true }),
-            )}
-          >
-            red celebrities
-          </p>{' '}
-          are against the cause!
-        </p>
-      </div>
+export const HomePage = () => {
+  const [level, setLevel] = React.useState<number>(6)
+  const [visible, setVisible] = React.useState<boolean>(true)
+  const [query, setQuery] = React.useState('')
+  const [status, setStatus] = React.useState<Celebrity['status'] | null>(null)
+
+  return (
+    <div className="flex flex-col bg-gray-50">
+      <Header query={query} setQuery={setQuery} status={status} setStatus={setStatus} />
+      <Hero query={query} setQuery={setQuery} status={status} setStatus={setStatus} />
+      <Grid query={query} setQuery={setQuery} visible={visible} setVisible={setVisible} level={level} setLevel={setLevel} status={status} setStatus={setStatus} />
     </div>
-    <Grid />
-  </div>
-)
+  )
+}
