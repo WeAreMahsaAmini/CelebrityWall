@@ -13,32 +13,32 @@ export const HomePage = () => (
           and their stance regarding what is happening in Iran.
         </p>
         <p className="text-lg">
-          <p
+          <span
             className={clsx(
               'inline font-bold text-white px-1',
               getCssColorByStatus({ status: 'GOOD', background: true }),
             )}
           >
             Green celebrities
-          </p>{' '}
+          </span>{' '}
           supported the cause,{' '}
-          <p
+          <span
             className={clsx(
               'inline font-bold text-white px-1',
               getCssColorByStatus({ status: 'UGLY', background: true }),
             )}
           >
             gray celebrities
-          </p>{' '}
+          </span>{' '}
           didn&apos;t react to the cause, and{' '}
-          <p
+          <span
             className={clsx(
               'inline font-bold text-white px-1',
               getCssColorByStatus({ status: 'BAD', background: true }),
             )}
           >
             red celebrities
-          </p>{' '}
+          </span>{' '}
           are against the cause!
         </p>
       </div>
