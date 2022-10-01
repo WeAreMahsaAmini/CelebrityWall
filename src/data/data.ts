@@ -7403,5 +7403,24 @@ export const data: { celebrities: Celebrity[] } = {
       status: randomStatus(),
       statusReferenceUrl: null,
     },
+    {
+      id: 'AngelinaJolie',
+      name: 'Angelina Jolie',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1520817102810238976/Mz3ClNHc_400x400.jpg',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'joliestweet',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'angelinajolie',
+        },
+      ],
+      category: 'ART',
+      status: randomStatus(),
+      statusReferenceUrl: null,
+    },
   ],
 }
