@@ -10,9 +10,9 @@ export const getCssColorByStatus = (options: {
   const { status, background, text, border } = options
   return clsx([
     status === 'GOOD' && [
-      background && 'bg-green-500',
-      text && 'text-green-500',
-      border && 'border-green-500',
+      background && 'bg-emerald-500',
+      text && 'text-emerald-500',
+      border && 'border-emerald-500',
     ],
     status === 'BAD' && [
       background && 'bg-red-500',

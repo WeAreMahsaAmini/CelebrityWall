@@ -14,49 +14,31 @@ export const Card = ({ celebrity, level, visible }: CardProps) => {
 
   const history = useHistory()
 
-  const levelMapping: Record<string, { size: number; s: number }> = {
-    0: { size: 20, s: 2 },
-    1: { size: 30, s: 3 },
-    2: { size: 40, s: 4 },
-    3: { size: 60, s: 6 },
-    4: { size: 80, s: 8 },
-    5: { size: 100, s: 10 },
-    6: { size: 120, s: 12 },
-    7: { size: 140, s: 14 },
-    8: { size: 180, s: 18 },
-  }
+  // getCssColorByCelebrity({ celebrity, border: true })
 
   return (
     <button
       type="button"
-      className="shadow group overflow-hidden m-[1px] transition-all duration-200"
+      className={clsx("shadow-lg bg-white group overflow-hidden transition-all duration-200 mb-3 rounded-xl border-b-4 hover:-translate-y-2", getCssColorByCelebrity({ celebrity, border: true }))}
       onClick={() => {
         history.push(`/profile/${id}`)
       }}
-      style={{
-        width: `${levelMapping[level].size}px`,
-      }}
     >
       <div className="relative">
-        <div
-          className={clsx(
-            'absolute inset-0 opacity-40 group-hover:hidden z-30 transition-all duration-500',
-            getCssColorByCelebrity({ celebrity, background: true }),
-          )}
-        />
 
         <img
           src={imageUrl}
           alt={name}
-          className="w-full grayscale group-hover:grayscale-0 transition-all duration-500"
+          className="w-full grayscale bg-gray-300 group-hover:grayscale-0 transition-all duration-500 rounded-t-lg"
         />
       </div>
       {visible && (
-        <div
-          className="p-[1px] text-center"
-          style={{ fontSize: `${levelMapping[level].s}px` }}
-        >
-          {name}
+        <div className='p-3'>
+          <div
+            className="p-[1px] font-semibold text-left"
+          >
+            {name}
+          </div>
         </div>
       )}
     </button>
