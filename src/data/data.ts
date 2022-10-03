@@ -7479,5 +7479,24 @@ export const data: { celebrities: Celebrity[] } = {
       status: randomStatus(),
       statusReferenceUrl: null,
     },
+    {
+      id: 'KarimBenzema',
+      name: 'Karim Benzema',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1401562839614210052/yo9BeNMD_400x400.jpg',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'Benzema',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'Benzema',
+        },
+      ],
+      category: 'ART',
+      status: randomStatus(),
+      statusReferenceUrl: null,
+    },
   ],
 }
