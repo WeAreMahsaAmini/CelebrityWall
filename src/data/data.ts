@@ -7460,5 +7460,24 @@ export const data: { celebrities: Celebrity[] } = {
       status: randomStatus(),
       statusReferenceUrl: null,
     },
+    {
+      id: 'GwynethPaltrow',
+      name: 'Gwyneth Paltrow',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1506338538232573954/ICie8tiW_400x400.png',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'GwynethPaltrow',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'GwynethPaltrow',
+        },
+      ],
+      category: 'ART',
+      status: randomStatus(),
+      statusReferenceUrl: null,
+    },
   ],
 }
