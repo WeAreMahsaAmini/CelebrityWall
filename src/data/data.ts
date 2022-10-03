@@ -7441,5 +7441,24 @@ export const data: { celebrities: Celebrity[] } = {
       status: randomStatus(),
       statusReferenceUrl: null,
     },
+    {
+      id: 'JaredLeto',
+      name: 'Jared Leto',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1350231095841701889/heJyb2Nl_400x400.jpg',
+      socialAccounts: [
+        {
+          type: 'TWITTER',
+          url: 'JaredLeto',
+        },
+        {
+          type: 'INSTAGRAM',
+          url: 'JaredLeto',
+        },
+      ],
+      category: 'ART',
+      status: randomStatus(),
+      statusReferenceUrl: null,
+    },
   ],
 }
