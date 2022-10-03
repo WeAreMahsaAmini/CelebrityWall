@@ -4,7 +4,7 @@ export type Celebrity = {
   imageUrl: string
   status: 'GOOD' | 'BAD' | 'UGLY'
   statusReferenceUrl?: string | null
-  category: 'ACTOR' | 'SINGER' | 'MODEL' | 'ART'
+  category: 'ACTOR' | 'SINGER' | 'MODEL' | 'ART' | 'ATHLETE'
   socialAccounts: {
     type: string
     url: string
