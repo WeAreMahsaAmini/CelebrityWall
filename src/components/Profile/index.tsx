@@ -56,7 +56,7 @@ export const Profile = ({ celebrity }: ProfileProps) => {
             alt={celebrity.name}
             className="w-full h-full rounded-full overflow-hidden object-cover"
           />
-          <div className={`z-10 absolute bottom-0 right-0 w-5 h-5 rounded-full ${HandleColorStatus()}`}>{' '}</div>
+          <div className={`z-10 absolute bottom-4 right-4 w-6 h-6 rounded-full ${HandleColorStatus()}`}>{' '}</div>
         </div>
         <h1 className="text-2xl text-center mt-5 text-neutral-800">
           {celebrity.name}
